@@ -1,0 +1,3 @@
+embedded:
+  mongodb.dockerImage: 'bitnami/mongodb:4.0'
+  rabbitmq.dockerImage: 'rabbitmq:3-management'
