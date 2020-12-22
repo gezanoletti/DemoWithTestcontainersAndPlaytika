@@ -7,3 +7,9 @@ spring:
     port: ${embedded.rabbitmq.port}
     username: ${embedded.rabbitmq.user}
     password: ${embedded.rabbitmq.password}
+  influxdb:
+    url: http://${embedded.influxdb.host}:${embedded.influxdb.port}
+    username: ${embedded.influxdb.admin-user}
+    password: ${embedded.influxdb.admin-password}
+    database: ${embedded.influxdb.database}
+    retention-policy: autogen

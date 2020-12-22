@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>Hoxton.SR7</spring-cloud.version>
+		<playtika.testcontainers.version>1.86</playtika.testcontainers.version>
 	</properties>
 
 	<dependencies>
@@ -45,13 +46,19 @@
 		<dependency>
 			<groupId>com.playtika.testcontainers</groupId>
 			<artifactId>embedded-mongodb</artifactId>
-			<version>1.86</version>
+			<version>${playtika.testcontainers.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.playtika.testcontainers/embedded-rabbitmq -->
 		<dependency>
 			<groupId>com.playtika.testcontainers</groupId>
 			<artifactId>embedded-rabbitmq</artifactId>
-			<version>1.86</version>
+			<version>${playtika.testcontainers.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.playtika.testcontainers/embedded-influxdb -->
+		<dependency>
+			<groupId>com.playtika.testcontainers</groupId>
+			<artifactId>embedded-influxdb</artifactId>
+			<version>${playtika.testcontainers.version}</version>
 		</dependency>
 	</dependencies>
 
