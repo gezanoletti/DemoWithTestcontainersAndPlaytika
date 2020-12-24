@@ -2,3 +2,4 @@ embedded:
   mongodb.dockerImage: 'bitnami/mongodb:4.0'
   rabbitmq.dockerImage: 'rabbitmq:3-management'
   influxdb.dockerImage: 'influxdb:1.4.3'
+  postgresql.dockerImage: 'postgres:12-alpine'
