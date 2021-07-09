@@ -3,3 +3,9 @@ embedded:
   rabbitmq.dockerImage: 'rabbitmq:3-management'
   influxdb.dockerImage: 'influxdb:1.4.3'
   postgresql.dockerImage: 'postgres:12-alpine'
+  kafka:
+    dockerImageVersion: "5.5.1"
+    topicsToCreate: demoTopic
+    schema-registry:
+      enabled: true
+      dockerImage: "confluentinc/cp-schema-registry:5.5.1"

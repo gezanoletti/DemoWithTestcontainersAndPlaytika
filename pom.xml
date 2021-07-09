@@ -66,6 +66,12 @@
 			<artifactId>embedded-postgresql</artifactId>
 			<version>${playtika.testcontainers.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.playtika.testcontainers</groupId>
+			<artifactId>embedded-kafka</artifactId>
+			<scope>test</scope>
+			<version>${playtika.testcontainers.version}</version>
+		</dependency>
 
 	</dependencies>
 

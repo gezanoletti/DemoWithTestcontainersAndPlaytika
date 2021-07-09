@@ -18,3 +18,28 @@ spring:
     password: ${embedded.influxdb.admin-password}
     database: ${embedded.influxdb.database}
     retention-policy: autogen
+  kafka:
+    producer:
+      client.id: TestcontainersWithPlaytika
+      request.timeout.ms: 20000
+      retry.backoff.ms: 500
+      schema.registry.url: http://localhost:${embedded.kafka.schema-registry.port}
+      acks: 1
+      retries: 10
+      key.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      value.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      interceptor.classes: io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor
+      bootstrap.servers: ${embedded.kafka.saslPlaintext.brokerList}
+      security.protocol: SASL_PLAINTEXT
+      sasl.mechanism: PLAIN
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${embedded.kafka.saslPlaintext.user}" password="${embedded.kafka.saslPlaintext.password}";
+    consumer:
+      schema.registry.url: http://localhost:${embedded.kafka.schema-registry.port}
+      auto-offset-reset: earliest
+      group-id: test
+      bootstrap.servers: ${embedded.kafka.saslPlaintext.brokerList}
+      security.protocol: SASL_PLAINTEXT
+      sasl.mechanism: PLAIN
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${embedded.kafka.saslPlaintext.user}" password="${embedded.kafka.saslPlaintext.password}";
+      key-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
